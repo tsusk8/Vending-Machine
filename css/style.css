@@ -1,0 +1,40 @@
+.bg-gray{
+    background-color: gray;
+}
+.bg-light-gray{
+    background-color: lightgray;
+}
+.bg-dark-gray{
+    background-color: darkgray;
+}
+.bg-blue{
+    background-color: blue;
+}
+.bg-red{
+    background-color: red;
+}
+.deplete-animation{
+    animation: deplete 1s linear forwards;
+}
+.expand-animation{
+    animation: deplete 1s linear reverse forwards;
+}
+.img-size{
+    max-width: 100%;
+    height: 300px;
+}
+@media screen and (max-width: 750px){
+    .img-size{
+        height: 200px;
+    }
+}
+@keyframes deplete {
+    0%{
+        width: 100%;
+        opacity: 1;
+    }
+    100%{
+        width: 0%;
+        opacity: 0;
+    } 
+}
