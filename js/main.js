@@ -8,12 +8,14 @@ class Product{
 
 function slideJump(steps) {
     let index = parseInt(main.getAttribute("data-index"));
+    steps = parseInt(steps);
     let currentElement = sliderItems.item(index);
 
-    if(index !== parseInt(steps)) {
+    if(index !== steps) {
+        direction = index > steps ? "right": "left"; 
         index = steps;
         let nextElement = sliderItems.item(index);
-        animateMain(currentElement, nextElement);
+        animateMain(currentElement, nextElement, direction);
         main.setAttribute("data-index", index.toString());
     }
 }
@@ -22,7 +24,7 @@ function slideItem(product, index){
     document.getElementById("targetName").innerHTML = product.name;
     document.getElementById("targetPrice").innerHTML = product.price + "円";
 }
-function animateMain(currentElement, nextElement) {
+function animateMain(currentElement, nextElement, direction) {
     main.innerHTML = "";
     main.append(nextElement);
     
@@ -31,10 +33,17 @@ function animateMain(currentElement, nextElement) {
 
     main.classList.add("expand-animation");
     extra.classList.add("deplete-animation");
-    
+
     sliderShow.innerHTML = "";
-    sliderShow.append(main);
-    sliderShow.append(extra);
+
+    if(direction == "left"){
+        sliderShow.append(main);
+        sliderShow.append(extra);    
+    }else{
+        sliderShow.append(extra);
+        sliderShow.append(main);
+    }
+    
 }
 function createSlide(products){
     const target = document.getElementById("targetSlide");
