@@ -186,7 +186,6 @@ main.setAttribute("data-index", "0");
 
 document.getElementById("love").addEventListener("click", function(){
     let index = parseInt(main.getAttribute("data-index"));
-    // 初期値
     if(index === 0){
         alert("商品を選択してから、PUSHボタンを押してください！")
     }else{
