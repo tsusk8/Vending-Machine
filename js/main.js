@@ -1,27 +1,27 @@
 class Product{
     constructor(name,price, url){
-        this.name = name;
+        this.name  = name;
         this.price = price;
-        this.url = url;
+        this.url   = url;
     }
 }
 
 function slideJump(steps) {
-    let index = parseInt(main.getAttribute("data-index"));
-    steps = parseInt(steps);
+    let index          = parseInt(main.getAttribute("data-index"));
     let currentElement = sliderItems.item(index);
+    steps              = parseInt(steps);
 
     if(index !== steps) {
-        direction = index > steps ? "right": "left"; 
-        index = steps;
+        direction       = index > steps ? "right": "left"; 
+        index           = steps;
         let nextElement = sliderItems.item(index);
         animateMain(currentElement, nextElement, direction);
         main.setAttribute("data-index", index.toString());
     }
 }
 function slideItem(product, index){
-    document.getElementById("targetNo").innerHTML = index;
-    document.getElementById("targetName").innerHTML = product.name;
+    document.getElementById("targetNo").innerHTML    = index;
+    document.getElementById("targetName").innerHTML  = product.name;
     document.getElementById("targetPrice").innerHTML = product.price + "円";
 }
 function animateMain(currentElement, nextElement, direction) {
@@ -47,8 +47,8 @@ function animateMain(currentElement, nextElement, direction) {
 }
 function createSlide(products){
     const target = document.getElementById("targetSlide");
-    let dom = "";
-    let img = "";
+    let dom      = "";
+    let img      = "";
 
     // create default img
     dom = document.createElement("div");
@@ -73,15 +73,15 @@ function createSlide(products){
 }
 function createButton(productCount){
     const targetButton = document.getElementById("targetButton");
-    let parentButton = document.createElement("div");
-    let childButton = "";
-    let button = "";
-    let buttonName = "";
+    let parentButton   = document.createElement("div");
+    let childButton    = "";
+    let button         = "";
+    let buttonName     = "";
     
     parentButton.classList.add("d-flex", "flex-wrap", "justify-content-start");
 
     for(i = 1; i <= productCount; i++){
-        buttonName = "btn-"+i;
+        buttonName  = "btn-"+i;
         childButton = document.createElement("div");
         childButton.classList.add("col-4", "py-2");
         
@@ -106,7 +106,7 @@ function addButtonEvent(products){
         })(i);
      }
 }
-const target = document.getElementById("target");
+const target      = document.getElementById("target");
 target.innerHTML +=
 `
 <div class="container-fluid">
@@ -169,8 +169,8 @@ addButtonEvent(products);
 const sliderItems = document.querySelectorAll("#targetSlide .slider-item");
 
 let sliderShow = document.createElement("div");
-let main = document.createElement("div");
-let extra = document.createElement("div");
+let main       = document.createElement("div");
+let extra      = document.createElement("div");
 
 sliderShow.classList.add("col-12", "d-flex", "flex-nowrap", "overflow-hiddens", "justify-content-center");
 main.classList.add("main", "d-flex", "justify-content-center");
