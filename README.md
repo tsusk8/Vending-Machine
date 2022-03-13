@@ -1,12 +1,14 @@
 # Vending-Machine
- RecursionのProject2の課題です。
+ This is an assignment for Recursion's Project 2.
+
+## Overview
+ This is a vending machine where the product name, product price, and product image (URL) are set in advance.
+
 ## URL
  https://tsusk8.github.io/Vending-Machine/
-## Overview
- 事前に商品名、商品価格、商品画像(URL)を設定する自動販売機です。
-## Usage
-  1. 自動販売機の数字をクリック
-  2. 選択された商品名、商品価格、商品画像が表示
-  3. PUSHボタンを押し、対象の商品を購入
- 
 
+## Usage
+  1. Click on the vending machine number
+  2. Selected product name, product price, and product image are displayed
+  3. Press the PUSH button and purchase the target product
+ 
